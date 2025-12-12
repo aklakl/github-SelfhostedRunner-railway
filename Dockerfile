@@ -18,6 +18,9 @@ RUN tar xzf actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
 
 # Copy the startup script
 COPY start.sh .
+#The `chmod` command grants execution permissions to the script.
+RUN chmod +x start.sh
+
 
 # Set the startup command
 CMD ["./start.sh"]
