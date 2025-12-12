@@ -15,6 +15,8 @@ ARG RUNNER_VERSION=2.316.1
 RUN curl -o actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz -L https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
 RUN tar xzf actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
 
+#Allow root user to run runner
+ENV RUNNER_ALLOW_RUNASROOT="1"
 
 # Copy the startup script
 COPY start.sh .
